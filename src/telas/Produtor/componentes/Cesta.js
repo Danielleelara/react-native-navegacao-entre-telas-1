@@ -6,10 +6,12 @@ import Texto from '../../../componentes/Texto';
 
 export default function Cesta({detalhes, itens, produtor}) {
   const navigation = useNavigation();
-  const {nome, imagem, descricao, preco} = detalhes;
+  const {descricao, imagem, nome, preco} = detalhes;
 
   return (
-    <TouchableOpacity style={estilos.cesta} onPress={() => {}}>
+    <TouchableOpacity
+      style={estilos.cesta}
+      onPress={() => navigation.navigate('Cesta', {detalhes, itens, produtor})}>
       <View style={estilos.conteudo}>
         <Image source={imagem} style={estilos.imagem} />
 
