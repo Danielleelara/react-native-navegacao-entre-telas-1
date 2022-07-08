@@ -5,10 +5,10 @@ import Home from '../telas/Produtores/Home';
 
 const Stack = createNativeStackNavigator();
 
-export default function ProdutorRotas() {
+export default function ProdutorRotas({ComponentePrincipal = Home}) {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="HomeScreen" component={Home} />
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="HomeScreen" component={ComponentePrincipal} />
       <Stack.Screen name="Produtor" component={Produtor} />
     </Stack.Navigator>
   );
